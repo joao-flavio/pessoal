@@ -1,8 +1,11 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 export default (req, res) => {
-  const horario = Date.now();
+  const tempo = new Date();
+  const hora = tempo.getHours();
+  const minuto = tempo.getMinutes();
+  const segundo = tempo.getSeconds();
   res.json({
-    data: horario
-  })
+    hora: `${hora}:${minuto}:${segundo}`
+  });
 }
